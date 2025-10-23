@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>✨ Taisha’s BarbieSpace ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#ff7ad9;
+      --hot:#ff31b0;
+      --baby:#ffd6f3;
+      --dark:#1b0a14;
+      --white:#fff;
+      --stroke: rgba(255,255,255,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Barlow",sans-serif;
+      color:#3a1030;
+      background: radial-gradient(1200px 600px at 20% -10%, #ffe5f7 0%, transparent 60%),
+                  radial-gradient(1200px 700px at 120% 120%, #ffd0f0 0%, transparent 60%),
+                  linear-gradient(180deg,#fff6fb 0%, #ffe9f8 70%, #ffd6f3 100%);
+      background-attachment:fixed;
+      cursor:url('https://cur.cursors-4u.net/cursors/cur-11/cur1075.cur'),auto;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+      background-image:url('https://i.imgur.com/9W2QbG8.png');
+      background-size:300px 300px;mix-blend-mode:screen;
+    }
+    .container{max-width:1100px;margin:24px auto;padding:0 16px}
+    .myspace-grid{display:grid;grid-template-columns:290px 1fr;gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.65));
+      border:1.5px solid var(--stroke);border-radius:18px;box-shadow:0 20px 40px rgba(255,75,185,.25);
+      backdrop-filter:blur(8px);overflow:hidden}
+    .card .hd{padding:14px 16px;background:linear-gradient(90deg,var(--baby),#ffe6fb);
+      border-bottom:1px dashed #f4b5de;font-weight:800;letter-spacing:.5px}
+    .card .bd{padding:18px}
+    .banner{position:relative;overflow:hidden;border-radius:22px;padding:24px;
+      background:conic-gradient(from 200deg at 80% -10%,#fff 0 20%,#ffd1f1 20% 45%,#ffe8f9 45% 60%,#fff 60% 100%);
+      border:2px solid var(--stroke);box-shadow:0 24px 60px rgba(255,70,210,.25)}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;
+      font-weight:700;font-size:12px;background:linear-gradient(180deg,#fff,#ffe0f6);
+      border:1px solid var(--stroke);box-shadow:inset 0 1px 0 #fff,0 4px 12px rgba(255,48,176,.25)}
+    .on{width:8px;height:8px;border-radius:50%;background:#00e676;box-shadow:0 0 0 3px rgba(0,230,118,.25)}
+    h1.title{font-family:"Playfair Display",serif;margin:10px 0 4px;font-size:42px}
+    .subtitle{font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:12px;opacity:.7}
+    .marquee{white-space:nowrap;overflow:hidden;border-radius:10px;border:1px dashed #f3a9da;background:#fff8fd}
+    .marquee span{display:inline-block;padding:10px 16px;animation:scroll 18s linear infinite;font-weight:800}
+    @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+    .pfp{position:relative;width:100%;border-radius:16px;overflow:hidden;border:2px solid var(--stroke);box-shadow:0 10px 24px rgba(255,0,153,.25)}
+    .pfp img{width:100%;height:auto;display:block}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pill{background:linear-gradient(180deg,#fff,#ffe6fa);border:1px solid var(--stroke);
+      padding:10px 12px;border-radius:999px;text-align:center;font-weight:800}
+    .blinkies{display:flex;flex-wrap:wrap;gap:8px}
+    .blinky{height:24px;border-radius:6px;border:1px solid var(--stroke);padding:2px 8px;
+      background:linear-gradient(180deg,#fff,#ffe8fb);font-weight:800;font-size:11px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .friend{background:#fff;border:1px solid var(--stroke);border-radius:12px;padding:8px;text-align:center;
+      box-shadow:0 6px 16px rgba(255,31,169,.15)}
+    .friend img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;border:1px solid #ffd1ef}
+    .comment{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px;border-bottom:1px dashed #f3a9da}
+    .comment img{width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid #ffd1ef}
+    footer{padding:40px 0 80px;text-align:center;color:#7d3f68;font-size:12px}
+    @media(max-width:860px){.myspace-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    .spark{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;
+      filter:drop-shadow(0 0 6px rgba(255,49,176,.9));animation:pop .9s ease-out forwards}
+    @keyframes pop{0%{transform:translateY(0)scale(1);opacity:1}100%{transform:translateY(-20px)scale(.2);opacity:0}}
+  </style>
+</head>
+<body>
+  <!-- Hidden autoplaying Lil Baby track -->
+  <audio autoplay loop style="display:none">
+    <source src="https://cdns-preview-b.dzcdn.net/stream/c-bb4b6c7fef8f21e5e96f229cd1b982c7-6.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <header class="banner">
+      <div class="badge"><span class="on"></span> Online now</div>
+      <h1 class="title">Taisha's <span style="color:var(--hot)">BarbieSpace</span></h1>
+      <div class="subtitle">capricorn ☼ • aquarius ☾↑ • cunt</div>
+      <div class="marquee" style="margin-top:14px"><span>✨ welcome to my profile hoe • it’s giving cunttt • add me & leave a comment✨&nbsp;&nbsp;&nbsp;</span><span>✨ welcome to my myspace-coded profile • it’s giving y2k barbie • add me & leave a cute comment ✨&nbsp;&nbsp;&nbsp;</span></div>
+    </header>
+
+    <main class="myspace-grid" style="margin-top:18px">
+      <aside class="left">
+        <section class="card">
+          <div class="hd">profile</div>
+          <div class="bd">
+            <div class="pfp"><img src="YOUR_MAIN_PROFILE_PIC_URL" alt="profile"></div>
+            <div class="stats" style="margin-top:12px">
+              <div class="pill">GLOBAL</div>
+              <div class="pill">she/HER</div>
+              <div class="pill">ya fave </div>
+              <div class="pill">since 2000</div>
+            </div>
+            <div class="blinkies" style="margin-top:14px">
+              <div class="blinky">✿ princess</div>
+              <div class="blinky">birkin me please</div>
+              <div class="blinky">♥ top 8 only</div>
+              <div class="blinky">☁ 5 star bitch shi</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div class="hd">contacting Taisha</div>
+          <div class="bd" style="display:grid;gap:10px">
+            <a class="pill" href="#">message me bookie </a>
+            <a class="pill" href="#">add to friends</a>
+            <a class="pill" href="#">instant message</a>
+            <a class="pill" href="#">block TF outta user!</a>
+          </div>
+        </section>
+      </aside>
+
+      <section class="right" style="display:grid;gap:18px">
+        <section class="card about">
+          <div class="hd">About me</div>
+          <div class="bd">
+            <p>Serving <strong>Barbie shi</strong> with a splash of <strong>MySpace</strong>. Pretty, Paid, & Put up. Here for sum money & tequila .</p>
+            <h3>Interests</h3>
+            <p>✧ sushi dates ✧ pink everything ✧ MUNYUN ✧ R&B mixtapes ✧ collaging shi ✧ hair 2 my assss ✧ forensic psych & law </p>
+            <h3>Who I’d like to meet</h3>
+            <p>Tony Montana, John Wick, & Frank Matthews.</p>
+          </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="card">
+          <div class="hd">Gallery</div>
+          <div class="bd" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+            <img src="YOUR_IMAGE_LINK_1" alt="photo1" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_2" alt="photo2" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_3" alt="photo3" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_4" alt="photo4" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_5" alt="photo5" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_6" alt="photo6" style="width:100%;border-radius:12px;">
+            <img src="YOUR_IMAGE_LINK_7" alt="photo7" style="width:100%;border-radius:12px;">
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="hd">Comments</div>
+          <div class="bd">
+            <div class="comment"><img src="https://images.unsplash.com/photo-1520975922284-9a8b4e0b6f36?q=80&w=200"><div><div style="font-weight:800">@tequilademon <span style="opacity:.6;font-weight:600">• 2m ago</span></div><div>only bad bitches should add me back ✨</div></div></div>
+            <div class="comment"><img src="https://images.unsplash.com/photo-1541534401786-2077eed87a72?q=80&w=200"><div><div style="font-weight:800">@mixmaster <span style="opacity:.6;font-weight:600">• 14m ago</span></div><div>track on repeat. this my shi fr.</div></div></div>
+            <div class="comment"><img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=200"><div><div style="font-weight:800">@sushistar <span style="opacity:.6;font-weight:600">• 1h ago</span></div><div>let’s roll maki & take pics like it’s 2005.</div></div></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>Made with love & tequila <3.</footer>
+  </div>
+
+  <script>
+    const colors=['#ff31b0','#ff7ad9','#ffd6f3'];
+    const make=(x,y)=>{const s=document.createElement('span');s.className='spark';
+    s.style.left=x+'px';s.style.top=y+'px';s.style.background=colors[Math.floor(Math.random()*colors.length)];
+    document.body.appendChild(s);setTimeout(()=>s.remove(),900)};
+    document.addEventListener('pointermove',e=>{for(let i=0;i<2;i++)make(e.clientX+Math.random()*8-4,e.clientY+Math.random()*8-4)});
+  </script>
+</body>
+</html>
